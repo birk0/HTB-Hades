@@ -1,19 +1,8 @@
 
 ### Introduction
 
-I initially started this box as a lab to help me learn active directory and kerberos related attacks, and in the process of building the box I took the opportunity to get familiar with building web applications in .NET. I based the theme of this box around Kerberos to showcase a clever trick you can use against Kerberos to abuse Resource Based Constrained Delegation against a Domain Controller, Hence the box name "Hades", master of the dog. Another theme I wanted to tie in with kerberos is "Password-less" authentication, where much of the users on this box are not compromised via their passwords but by stealthier tricks, eg: shadow credentials. There are two other cool attacks that I centred the box around. The first one is a lesser-known Active Directory attack related to moving users between OUs to abuse inherited ACLs. The other attack I devised while learning about Enrollment Agents in ADCS and wanted to show off the ESC3 attack. There's a lot of other cool things, so I'll just get right in.
+I initially started this box as a lab to help me learn active directory and kerberos related attacks, and in the process of building the box I took the opportunity to get familiar with building web applications in .NET. I based the theme of this box around Kerberos to showcase a clever trick you can use against Kerberos to abuse Resource Based Constrained Delegation against a Domain Controller, Hence the box name "Hades". Another theme I wanted to tie in with kerberos is "Password-less" authentication, where much of the users on this box are not compromised via their passwords but by stealthier tricks, eg: shadow credentials. There are two other cool attacks that I centred the box around. The first one is a lesser-known Active Directory attack related to moving users between OUs to abuse inherited ACLs. The other attack I devised while learning about Enrollment Agents in ADCS and wanted to show off the ESC3 attack. There's a lot of other cool things, so I'll just get right in.
 
-### Info for HTB
-
-#### Access
-
-Passwords:
-
-| User          | Password          |
-| ------------- | ----------------- |
-| auditor       | "#AB001_Logon"    |
-| ashley.b      | "D0ntHackMe2024!" |
-| Administrator | "Hades_Admin!!"   |
 ### Key Processes 
 
 - IIS is hosting a webserver `hades.htb` on port 443. 
