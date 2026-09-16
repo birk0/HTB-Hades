@@ -1,3 +1,5 @@
+# A script for exploiting the LDAP SSO login
+
 import requests
 import urllib3
 from bs4 import BeautifulSoup
