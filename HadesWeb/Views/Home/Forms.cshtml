@@ -1,0 +1,66 @@
+﻿@model HadesWeb.Models.UploadFormModel
+@{
+    ViewBag.Title = "Forms";
+    Layout = "_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Forms", "Home", FormMethod.Post, new { enctype = "multipart/form-data", @class = "upload-form-container" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+    <div class="title-container">
+        <h2>Report Submission</h2>
+        <button type="button" class="info-button" onclick="openModal()">?</button>
+    </div>
+
+    <div id="infoModal" class="upload-form-modal">
+        <div class="upload-form-modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Form Information</h3>
+            <p>
+                We're sorry that you're experiencing any issues. Our team aims to provide the best assistance where we can.<br /><br />You can use the form below to report your issue. A member of our team will typically respond to your report within a couple of minutes, so please be patient!
+            </p>
+        </div>
+    </div>
+
+    <div class="upload-form-group-horizontal">
+        <div class="upload-form-group">
+            @Html.LabelFor(m => m.Name, new { @class = "upload-form-label" })
+            @Html.TextBoxFor(m => m.Name, new { @class = "upload-form-textarea" })
+            @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="upload-form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "upload-form-label" })
+            @Html.TextBoxFor(m => m.Email, new { @class = "upload-form-textarea" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="upload-form-group">
+        @Html.LabelFor(m => m.Description, new { @class = "upload-form-label" })
+        @Html.TextAreaFor(m => m.Description, new { @class = "upload-form-textarea", rows = "4" })
+        @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="upload-form-group">
+        @Html.LabelFor(m => m.UploadedFile, new { @class = "upload-form-label" })
+        @Html.TextBoxFor(m => m.UploadedFile, new { type = "file" })
+        @Html.ValidationMessageFor(m => m.UploadedFile, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="upload-submit-form">
+        <button class="woocommerce-Button button btn btn-primary" type="submit">Submit</button>
+        <div class="upload-viewbag-message">
+            @ViewBag.Message
+        </div>
+        <div class="upload-viewbag-success">
+            @ViewBag.Success
+        </div>
+    </div>
+}
+
+<script src="~/Content/js/upload-model.js"></script>
+

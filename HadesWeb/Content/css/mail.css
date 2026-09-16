@@ -1,0 +1,167 @@
+﻿
+
+h1, h2, h3 {
+    margin-top: 0
+}
+
+h2, h3, .h3, .h5 {
+    font-weight: 500;
+    line-height: 1.2;
+    color: #373f50
+}
+
+.h5 {
+    font-size: 1.25rem
+}
+
+.btn {
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.625rem 1.375rem;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    border-radius: 0.3125rem;
+    transition: color 0.25s ease-in-out,background-color 0.25s ease-in-out,border-color 0.25s ease-in-out,box-shadow 0.2s ease-in-out
+}
+
+.justify-content-end {
+    justify-content: flex-end !important
+}
+
+.pt-4 {
+    padding-top: 1.5rem !important
+}
+
+.pb-4 {
+    padding-bottom: 1.5rem !important
+}
+
+@media (min-width:992px) {
+
+    .pt-lg-3, .py-lg-3 {
+        padding-top: 1rem !important
+    }
+}
+
+iframe {
+    width: 100%
+}
+
+iframe {
+    max-width: 100%
+}
+
+.inbox-container {
+    width: 400px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.inbox-header {
+    padding: 12px;
+    border-bottom: 3px solid orange;
+}
+
+    .inbox-header h2 {
+        margin: 0;
+        font-size: 20px;
+        color: #5a5a5a;
+    }
+
+.inbox-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.email-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+    .email-item.active {
+        border-left: 5px solid orange;
+        background-color: #f9f9f9;
+    }
+
+    .email-item:hover {
+        background-color: #f2f2f2;
+    }
+
+.email-icon img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.email-details {
+    flex-grow: 1;
+}
+
+.email-title {
+    /*font-weight: bold;*/
+    color: #333;
+    font-size: 16px;
+}
+
+.email-date {
+    font-size: 13px;
+    color: #999;
+}
+
+.email-arrow {
+    font-size: 19px;
+    color: #999;
+}
+/* Modal Background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    margin: 5.5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 10px;
+}
+
+#modalTitle {
+    padding-bottom: 15px;
+    border-bottom: 3px solid orange;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }

@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "_Layout.cshtml";
+}
+
+<div class="card text-center py-4 mb-4">
+    <div class=card-body>
+        <i class="czi-home text-muted h2 font-weight-normal opacity-60 mb-4"></i>
+        <h5 class=pb-2>From your account dashboard you can:</h5>
+        @Html.ActionLink("View Mail", "Mail", "Home", new { area = "" }, new { @class = "btn btn-outline-primary btn-sm m-2" })
+        @Html.ActionLink("Manage Authentication", "Security", "Home", new { area = "" }, new { @class = "btn btn-outline-primary btn-sm m-2" })
+        @Html.ActionLink("Edit account details", "Account", "Home", new { area = "" }, new { @class = "btn btn-outline-primary btn-sm m-2" })
+    </div>
+</div>
+

@@ -1,0 +1,184 @@
+﻿@using Microsoft.AspNet.Identity;
+<!DOCTYPE html>
+
+<head>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=2.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/css/DefaultTemplate.css">
+    <link rel="stylesheet" href="~/Content/css/account.css" />
+    <link rel="stylesheet" href="~/Content/css/mail.css" />
+    <link rel="stylesheet" href="~/Content/css/downloads.css" />
+    <link rel="stylesheet" href="~/Content/css/security.css" />
+    <link rel="stylesheet" href="~/Content/css/upload.css" />
+
+</head>
+
+<body>
+    <div id=page class="hfeed site">
+        <div class="cz-sidebar cz-offcanvas sf-hidden" id=cz-handheld-sidebar></div>
+
+        <header id=masthead role=banner class="site-header site-header-marketplace bg-dark box-shadow-sm">
+            <div class="navbar navbar-expand-lg navbar-dark">
+                <div class=container-fluid>
+                    <div class="navbar-toolbar d-flex align-items-center order-lg-3">
+                        <a href=#cz-handheld-sidebar class="navbar-toggler sf-hidden" data-toggle=sidebar>
+
+
+
+
+                            <div class="navbar-tool dropdown ml-2">
+                                <a class="navbar-tool-icon-box border dropdown-toggle" href="@Url.Action("Account", "Home")">
+                                    <img class="rounded-circle w-100" src="~/Content/Assets/avatar.png" alt=user>
+                                </a>
+                                <a class="navbar-tool-text ml-n1" href="@Url.Action("Account","Home")">
+                                    <small>
+                                        Hello,
+                                    </small>
+                                    @(User.Identity.GetUserName().Split('@')[0])
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-right sf-hidden" style=min-width:14rem>
+                                </ul>
+                            </div>
+                            <div class="navbar-tool dropdown ml-3">
+                                <div class="cartzilla-cart-toggle d-flex">
+                                    <a class="navbar-tool-icon-box bg-secondary dropdown-toggle" href="@Url.Action("Mail", "Home")">
+                                        <img class="navbar-tool-icon czi-cart" src="~/Content/Assets/mail.png" />
+                                    </a>
+                                </div>
+                                <div class="cartzilla-cart dropdown-menu dropdown-menu-right sf-hidden" style="width:20rem">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="navbar-collapse mr-auto order-lg-2 collapse" id=navbarCollapse>
+                        <span class="main-domain-label">Hades Portal</span>
+                    </div>
+                </div>
+            </div>
+            <div class="search-box collapse sf-hidden" id=searchBox>
+
+            </div>
+        </header>
+        <main id=content role=main tabindex=-1 class=site-main>
+            <div style=background-color:#f6f9fc>
+            </div>
+            <div id=primary class=content-area>
+
+                <div id=post-8 class="article__page post-8 page type-page status-publish hentry">
+                    <div class="article__content article__content--page">
+                        <div class=page__content>
+                            <div class=woocommerce>
+                                <div class="page-title-overlap bg-secondary pt-4">
+                                    <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+                                        <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+                                            <nav class=woocommerce-breadcrumb aria-label=breadcrumb></nav>
+                                        </div>
+                                        <div class="order-lg-1 pr-lg-4 text-center text-lg-left">
+                                            <h1 class="h3 text-dark mb-0">@ViewBag.Title</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container pb-5 mb-2 mb-md-3">
+                                    <div class=row>
+                                        <aside class="col-lg-4 pt-4 pt-lg-0">
+                                            <div class="cz-sidebar-static rounded-lg box-shadow-lg px-0 pb-0 mb-5 mb-lg-0">
+                                                <div class="px-4 mb-4">
+                                                    <div class="media align-items-center">
+                                                        <div class="img-thumbnail rounded-circle position-relative" style=width:6.375rem>
+                                                            <img alt=avatar src="~/Content/Assets/avatar.png" class="avatar avatar-90 photo rounded-circle" height=90 width=90>
+                                                        </div>
+                                                        <div class="media-body pl-3">
+                                                            <h3 class="font-size-base mb-0">@(User.Identity.GetUserName().Split('@')[0])</h3>
+                                                            <span class="text-accent font-size-sm">@User.Identity.GetUserName()</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <!-- side navbar -->
+
+                                                <nav class="woocommerce-MyAccount-navigation">
+                                                    <ul class="list-unstyled mb-0">
+                                                        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard border-top mb-0 @(ViewContext.RouteData.Values["action"].ToString() == "Index" ? "is-active" : "")">
+                                                            @Html.ActionLink("Dashboard", "Index", "Home", new { area = "" }, new { @class = "nav-link-style d-flex align-items-center px-4 py-3" })
+                                                        </li>
+                                                        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders border-top mb-0 @(ViewContext.RouteData.Values["action"].ToString() == "Mail" ? "is-active" : "")">
+                                                            @Html.ActionLink("Mail", "Mail", "Home", new { area = "" }, new { @class = "nav-link-style d-flex align-items-center px-4 py-3" })
+                                                        </li>
+                                                        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--downloads border-top mb-0 @(ViewContext.RouteData.Values["action"].ToString() == "Downloads" ? "is-active" : "")">
+                                                            @Html.ActionLink("Downloads", "Downloads", "Home", new { area = "" }, new { @class = "nav-link-style d-flex align-items-center px-4 py-3" })
+                                                        </li>
+                                                        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address border-top mb-0 @(ViewContext.RouteData.Values["action"].ToString() == "Security" ? "is-active" : "")">
+                                                            @Html.ActionLink("Security", "Security", "Home", new { area = "" }, new { @class = "nav-link-style d-flex align-items-center px-4 py-3" })
+                                                        </li>
+                                                        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account border-top mb-0 @(ViewContext.RouteData.Values["action"].ToString() == "Account" ? "is-active" : "")">
+                                                            @Html.ActionLink("Account Details", "Account", "Home", new { area = "" }, new { @class = "nav-link-style d-flex align-items-center px-4 py-3" })
+                                                        </li>
+                                                        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--wpf-delete-account border-top mb-0 @(ViewContext.RouteData.Values["action"].ToString() == "Forms" ? "is-active" : "")">
+                                                            @Html.ActionLink("Forms", "Forms", "Home", new { area = "" }, new { @class = "nav-link-style d-flex align-items-center px-4 py-3" })
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+
+                                        </aside>
+
+                                        <section class=col-lg-8>
+                                            <div class=woocommerce-MyAccount-content>
+
+                                                <!-- Logout -->
+                                                <div class="d-flex justify-content-between align-items-center pt-lg-2 pb-4 pb-lg-5 mb-lg-3">
+                                                    <h6 class="font-size-base text-dark mb-0"></h6>
+                                                    @using (Html.BeginForm("Logout", "Default", FormMethod.Post, new { @class = "d-inline" }))
+                                                    {
+                                                        @Html.AntiForgeryToken()
+                                                        <button type="submit" class="btn btn-primary btn-sm d-none d-lg-inline-block">
+                                                            Logout
+                                                        </button>
+                                                    }
+                                                </div>
+
+
+                                                <!-- Page Content -->
+
+                                                <div class="child">
+                                                    @RenderBody()
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer  -->
+            <div class="footer-spacer"></div>
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-left">
+                            <p>&copy; 2024 Hades, all rights reserved.</p>
+                        </div>
+                        <div class="footer-right">
+                            <ul class="footer-links">
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+
+        </main>
+    </div>
+</body>
+
+
+

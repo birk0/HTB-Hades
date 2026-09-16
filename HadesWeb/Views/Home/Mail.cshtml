@@ -1,0 +1,54 @@
+﻿@model List<HadesWeb.Models.Emails>
+@{
+    ViewBag.Title = "Mail";
+    Layout = "_Layout.cshtml";
+}
+
+<section class=col-lg-8>
+    <div class=woocommerce-MyAccount-content>
+
+        <div class="inbox-container">
+            <div class="inbox-header">
+                <h2>INBOX</h2>
+            </div>
+            <div class="inbox-list">
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var email in Model)
+                    {
+                        var emailText = HttpUtility.JavaScriptStringEncode(email.Text);
+                        <div class="email-item" onclick="openModal('@email.Title', '@email.Date', '@emailText')">
+                            <div class="email-icon"><img src="~/Content/Assets/mail_small.png" alt="Icon" /></div>
+                            <div class="email-details">
+                                <div class="email-title">@email.Title</div>
+                                <div class="email-date">@email.Date</div>
+                            </div>
+                            <div class="email-arrow">&gt;</div>
+                        </div>
+                    }
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="emailModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDate"></p>
+        <p id="modalText"></p>
+    </div>
+</div>
+
+<script src="~/Content/js/emailModal.js"></script>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,78 @@
+﻿@using HadesWeb.Models;
+@model HadesWeb.Models.AccountFormModel
+@{
+    ViewBag.Title = "Account Details";
+    Layout = "_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("Account", "Home", FormMethod.Post, new { @class = "woocommerce-EditAccountForm edit-account", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="cartzilla-pp-wrap bg-secondary rounded-lg p-4 mb-4">
+        <div class="media align-items-center">
+            <img alt=avatar src="~/Content/Assets/avatar.png" class="avatar avatar-90 photo" height=90 width=90 style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-8)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">
+
+            <div class="media-body pl-3">
+                @Html.LabelFor(m => m.ProfilePicture, new { @class = "cartzilla-pp-add-change btn btn-light btn-shadow btn-sm mb-2" })
+                <input type="file" id="@Html.IdFor(m => m.ProfilePicture)" name="file" style="display:none;" />
+                <div class="p mb-0 font-size-ms text-muted">Upload JPG or PNG image.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class=row>
+        <div class=col-sm-6>
+            <div class="woocommerce-form-row woocommerce-form-row--first form-group">
+                @Html.LabelFor(m => m.FirstName, new { @class = "" })
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "woocommerce-Input woocommerce-Input--text input-text form-control", id = "account_first_name" })
+                @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class=col-sm-6>
+            <div class="woocommerce-form-row woocommerce-form-row--last form-group">
+                @Html.LabelFor(m => m.LastName, new { @class = "" })
+                @Html.TextBoxFor(m => m.LastName, new { @class = "woocommerce-Input woocommerce-Input--text input-text form-control", id = "account_last_name" })
+                @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="woocommerce-form-row woocommerce-form-row--wide form-group">
+        @Html.LabelFor(m => m.DisplayName, new { @class = "" })
+        @Html.TextBoxFor(m => m.DisplayName, new { @class = "woocommerce-Input woocommerce-Input--text input-text form-control", id = "account_display_name" })
+        @Html.ValidationMessageFor(m => m.DisplayName, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="woocommerce-form-row woocommerce-form-row--wide form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "" })
+        @Html.TextBoxFor(m => m.Email, new { @class = "woocommerce-Input woocommerce-Input--email input-text form-control", id = "account_email" })
+        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="woocommerce-form-row woocommerce-form-row--wide form-group">
+        @Html.LabelFor(m => m.Password, new { @class = "" })
+        @Html.PasswordFor(m => m.Password, new { @class = "woocommerce-Input woocommerce-Input--password input-text form-control", id = "password_current" })
+        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="woocommerce-form-row woocommerce-form-row--wide form-group">
+        @Html.LabelFor(m => m.NewPassword, new { @class = "" })
+        @Html.PasswordFor(m => m.NewPassword, new { @class = "woocommerce-Input woocommerce-Input--password input-text form-control", id = "password_1" })
+        @Html.ValidationMessageFor(m => m.NewPassword, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="woocommerce-form-row woocommerce-form-row--wide form-group">
+        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "" })
+        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "woocommerce-Input woocommerce-Input--password input-text form-control", id = "password_2" })
+        @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+    </div>
+
+    <button type=submit class="woocommerce-Button button btn btn-primary" name=save_account_details value="Save changes">
+        Save changes
+    </button>
+}
+

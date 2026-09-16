@@ -1,0 +1,117 @@
+﻿/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #4b566b,#7d879c );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin:0;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+#loginForm {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+    #loginForm h2 {
+        color: #0066cc;
+        /*margin-bottom: 40px;*/
+        font-size: 28px;
+        font-weight: bold;
+        margin: 0 70px 40px 70px;
+    }
+
+    #loginForm .form-group {
+        margin-top: 30px;
+    }
+
+    #loginForm .form-control {
+        font-size: 16px;
+        padding: 10px 15px;
+        height: 45px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+        #loginForm .form-control:focus {
+            border-color: #0066cc;
+            box-shadow: none;
+        }
+
+    #loginForm .btn {
+        background-color: #003366;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 12px 20px;
+        border-radius: 5px;
+        border: none;
+        width: 100%;
+        cursor: pointer;
+    }
+
+        #loginForm .btn:hover {
+            background-color: #004080;
+        }
+
+    #loginForm .checkbox {
+        display: flex;
+        align-items: center;
+        
+        margin-bottom: 20px;
+    }
+
+        #loginForm .checkbox label {
+            margin-bottom: 0;
+        }
+
+        #loginForm .checkbox a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+            #loginForm .checkbox a:hover {
+                text-decoration: underline;
+            }
+
+    #loginForm img {
+        margin-bottom: 20px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+    }
+        #loginForm img:hover {
+            margin-bottom: 20px;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+        }
+
+.text-danger {
+    color: #cc0000;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    display: block;
+    font-weight: bold;
+    
+}
+    .text-danger ul {
+        list-style-type: none;
+        padding:0;
+    }
+
+#loginForm .form-group .text-danger {
+    margin-left: 15px; 
+}

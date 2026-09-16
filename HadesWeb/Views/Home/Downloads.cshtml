@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Downloads";
+    Layout = "_Layout.cshtml";
+}
+
+
+
+<div class="download-form-container">
+    <div class="download-form-item">
+        <div class="download-form-details">
+            <h3>Form 1: Registration</h3>
+            <p>This form is used for user registration.</p>
+        </div>
+        @using (Html.BeginForm("Download", "Home", FormMethod.Get, new { @class = "download-form-action" }))
+        {
+            <input type="hidden" name="fileName" value="registration.pdf" />
+            <button class="btn btn-outline-primary btn-sm">
+                Download
+            </button>
+        }
+    </div>
+
+    <div class="download-form-item">
+        <div class="download-form-details">
+            <h3>Form 2: Applications</h3>
+            <p>This form is used for managing applications.</p>
+        </div>
+        @using (Html.BeginForm("Download", "Home", FormMethod.Get, new { @class = "download-form-action" }))
+        {
+            <input type="hidden" name="fileName" value="rejection.pdf" />
+            <button class="btn btn-outline-primary btn-sm">
+                Download
+            </button>
+        }
+    </div>
+
+    <div class="download-form-item">
+        <div class="download-form-details">
+            <h3>Form 3: Feedback</h3>
+            <p>This form is used for problem reports.</p>
+        </div>
+        @using (Html.BeginForm("Download", "Home", FormMethod.Get, new { @class = "download-form-action" }))
+        {
+            <input type="hidden" name="fileName" value="report.pdf"/>
+            <button class="btn btn-outline-primary btn-sm">
+                Download
+            </button>
+        }
+    </div>
+</div>
+

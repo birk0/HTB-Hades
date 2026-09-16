@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Security";
+    Layout = "_Layout.cshtml";
+}
+
+<section class=col-lg-8>
+    <div class=woocommerce-MyAccount-content>
+
+        <h6 class="h6-security-header">Select how you authenticate to our site.</h6>
+
+        <div class="security-viewbag-warning">
+            @ViewBag.Message
+        </div>
+
+        @using (Html.BeginForm("Security", "Home", FormMethod.Post, new { @class = "row" }))
+        {
+            <div class="col-sm-6 mb-4 mb-sm-0 security-box-flex">
+                <div class="border rounded-lg p-4 h-100">
+                    <h2 class="woocommerce-column__title h6">Two-Factor Authentication</h2>
+                    <ul class="font-size-sm list-unstyled mb-0">
+                        <li class=woocommerce-customer-details--address--empty>
+                            You have not set up this type of authentication yet.
+                        </li>
+                        <li class="woocommerce-customer-details--edit pt-2">
+                            <button type="submit" class="btn btn-outline-primary btn-sm">
+                                Add
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-sm-6 mb-4 mb-sm-0 security-box-flex">
+                <div class="border rounded-lg p-4 h-100">
+                    <h2 class="woocommerce-column__title h6">QR Code</h2>
+                    <ul class="font-size-sm list-unstyled mb-0">
+                        <li class=woocommerce-customer-details--address--empty>
+                            You have not set up this type of authentication yet.
+                        </li>
+                        <li class="woocommerce-customer-details--edit pt-2">
+                            <button type="submit" class="btn btn-outline-primary btn-sm">
+                                Add
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        }
+    </div>
+</section>
